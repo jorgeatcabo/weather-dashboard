@@ -2,11 +2,10 @@ const api="b94db98390be2c75a7a4da963d43370b";
 const unit="metric"
 //const url="https://api.openweathermap.org/data/2.5/weather?q="+query+"&appid="+api+"&units="+unit;
 const url="https://api.openweathermap.org/data/2.5/weather?q=mazatlan"+"&appid="+api+"&units="+unit;
-// var citySearch=$('.city-search').text()
+var searchResults=$('.search-results')
 
 $(".city-button").click(function(){
     var str = $(".city-search").val();
-    // alert(str);
     getForecast(str)
 });
 
@@ -22,6 +21,13 @@ function getForecast(city) {
         $('.wind').text('Wind: '+data.wind.speed+' MPH')
         $('.humidity').text('Humidity: '+data.main.humidity+' %')
         $('.city-name').text(city)
+
+        
+        var cityNameButton=document.createElement('button')
+        searchResults.append(cityNameButton)
+        cityNameButton.setAttribute("data-city",city)
+        cityNameButton.setAttribute("class", "btn btn-primary btn-block")
+        cityNameButton.textContent=city
         
         //Getting UV with coordinates
         fetch("https://api.openweathermap.org/data/2.5/uvi?lat="+data.coord.lat+"&lon="+data.coord.lon+"&appid="+api)
@@ -46,4 +52,5 @@ function getForecast(city) {
         });
     }
 
-    
+    //Pendientes:
+    // validar wu no esté vacío el nombre de la ciudad, y si no la encuentra ponga un msj
