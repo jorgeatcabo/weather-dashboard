@@ -1,3 +1,21 @@
+
+
+
+
+
 #grad {
     background-image: linear-gradient(to left, rgb(28, 8, 97) , rgb(23, 121, 201));
+  }
+
+
+  /* Classes */
+  .page-header{
+    margin-bottom: 5px;
+  }
+  .city-search{
+    margin:5px 0;
+  } 
+
+  .city-button{
+    margin:5px 0;
   }

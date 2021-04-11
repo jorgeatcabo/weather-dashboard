@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/css/styles.css">
     <title>Weather Dashboard</title>
 </head>
@@ -12,43 +13,45 @@
 
     <!-- Main Content -->
     <main>
-<!-- ***************** ver este ejemplo: 05-Third-Party-APIs/01-Activities/15-Ins_Bootstrap-Utilities/index.html -->
+
         <!-- Main Header -->
         <header id="grad" class="p-3 page-header text-center text-white">
             <h1>Weather Dashboard</h1>
         </header>
 
-        <section class="container">
+        <section class="container-fluid">
 
             <!-- Left Sidebar -->
-            
+            <section class="row">
 
-            
-            <section class="row justify-content-around">
-                <div class="col-12 col-lg-3">
-                    <h2>About Us</h2>
-                    <p>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. A deleniti illo amet veniam. Enim dignissimos sint,
-                    modi voluptate libero corporis ipsa consectetur commodi dolorum dolores vitae? Odit perspiciatis iure placeat.
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam, neque ab doloremque, harum corporis
-                    voluptas explicabo amet culpa, odit autem totam itaque voluptatibus ipsa quos aperiam eius vel? Commodi,
-                    nesciunt.
-                    </p>
+                <div class="col-12 col-lg-3 align-self-start">
+                    <h3>Search For A City</h3>
+                    <input class="city-search form-control input-lg" type="text" placeholder="City">
+                    <button class="city-button btn btn-primary btn-block">Search</button>
+                    <hr>
                 </div>
+
                 <div class="col-12 col-lg-9">
-                    <div class="row justify-content-around">
+
+                    <div class="row border border-dark m-1">
                         <div class="col-12 col-lg-9 city-current-weather">
-                            <p>
-                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. A deleniti illo amet veniam. Enim dignissimos sint,
-                                modi voluptate libero corporis ipsa consectetur commodi dolorum dolores vitae? Odit perspiciatis iure placeat.
-                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam, neque ab doloremque, harum corporis
-                                voluptas explicabo amet culpa, odit autem totam itaque voluptatibus ipsa quos aperiam eius vel? Commodi,
-                                nesciunt.
-                            </p>
+                          <h3 class="city-name"></h3>
+                            <h5 class="temp"></h5>
+                            <h5 class="wind"></h5>
+                            <h5 class="humidity"></h5>
+                            <h5 class="uv">UV Index:</h5>
                         </div>
                     </div>
-                    <div class="row justify-content-around">
-                        <div class="col-12 col-lg-3 mb-3">
+
+                    <div class="row">
+                      <div class="col-12 col-lg-12 mb-1">
+                        <h3>5-Day Forecast:</h3>
+                      </div>
+                    </div>
+
+                    <!-- Forecast -->
+                    <div class="row justify-content-around no-gutters">
+                        <div class="col-12 col-lg-2">
                             <div class="card">
                               <h3 class="card-header bg-info">
                                 Service 1
@@ -60,11 +63,11 @@
                                   neque,
                                   quas obcaecati laborum?
                                 </p>
-                                <button class="btn btn-block btn-info">Learn more.</button>
                               </div>
                             </div>
                           </div>
-                          <div class="col-12 col-lg-3 mb-3">
+
+                          <div class="col-12 col-lg-2">
                             <div class="card">
                               <h3 class="card-header bg-success">
                                 Service 2
@@ -76,11 +79,11 @@
                                   neque,
                                   quas obcaecati laborum?
                                 </p>
-                                <button class="btn btn-block btn-info">Learn more.</button>
                               </div>
                             </div>
                           </div>
-                          <div class="col-12 col-lg-3 mb-3">
+
+                          <div class="col-12 col-lg-2">
                             <div class="card">
                               <h3 class="card-header bg-warning">
                                 Service 3
@@ -92,7 +95,38 @@
                                   neque,
                                   quas obcaecati laborum?
                                 </p>
-                                <button class="btn btn-block btn-info">Learn more.</button>
+                              </div>
+                            </div>
+                          </div>
+                          
+                          <div class="col-12 col-lg-2">
+                            <div class="card">
+                              <h3 class="card-header bg-warning">
+                                Service 3
+                              </h3>
+                              <div class="card-body">
+                                <p class="card-text">
+                                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo accusantium dolor at, blanditiis rem
+                                  quisquam ipsam ipsum. Magnam ut quibusdam facilis consequatur veritatis, ullam molestiae, inventore
+                                  neque,
+                                  quas obcaecati laborum?
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="col-12 col-lg-2">
+                            <div class="card">
+                              <h3 class="card-header bg-warning">
+                                Service 3
+                              </h3>
+                              <div class="card-body">
+                                <p class="card-text">
+                                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo accusantium dolor at, blanditiis rem
+                                  quisquam ipsam ipsum. Magnam ut quibusdam facilis consequatur veritatis, ullam molestiae, inventore
+                                  neque,
+                                  quas obcaecati laborum?
+                                </p>
                               </div>
                             </div>
                           </div>
@@ -105,7 +139,9 @@
         </section>
 
     </main>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!-- Option 1: jQuery and Bootstrap Bundle -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    <script src="./assets/js/scripts.js"></script>
 </body>
 </html>
