@@ -1,143 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+
+  <head>
+    
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <!-- Bootstrap CSS -->
-   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/css/styles.css">
+
     <title>Weather Dashboard</title>
-</head>
+
+  </head>
+
 <body>
 
-    <!-- Main Content -->
-    <main>
+  <!-- Main Content -->
+  <main>
 
-        <!-- Main Header -->
-        <header id="grad" class="p-3 page-header text-center text-white">
-            <h1>Weather Dashboard</h1>
-        </header>
+    <!-- Main Header -->
+    <header id="grad" class="p-3 page-header text-center text-white">
+        <h1>Weather Dashboard</h1>
+    </header>
 
-        <section class="container-fluid">
+    <section class="container-fluid">
 
-            <!-- Left Sidebar -->
-            <section class="row">
+      <!-- Left Sidebar -->
+      <section class="row">
 
-                <div class="col-12 col-lg-3 align-self-start search-results">
-                    <h3>Search for a City</h3>
-                    <input class="city-search form-control input-lg" type="text" placeholder="City">
-                    <button class="city-button btn btn-primary btn-block">Search</button>
-                    <hr>
-                </div>
-
-                <div class="col-12 col-lg-9">
-
-                    <div class="row border border-dark m-1 p-2">
-                        <div class="col-12 col-lg-9 city-current-weather">
-                          <h3 class="city-name"></h3>
-                            <p class="temp"></p>
-                            <p class="wind"></p>
-                            <p class="humidity"></p>
-                            <p class="uvText rounded"></p>
-                            <p class="uvNumber rounded p-1"></p>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                      <div class="col-12 col-lg-12 mb-1">
-                        <h3>5-Day Forecast:</h3>
-                      </div>
-                    </div>
-
-                    <!-- Forecast -->
-                    <div class="row justify-content-around no-gutters">
-                        <div class="col-12 col-lg-2">
-                            <div class="card">
-                              <h5 class="card-header bg-info day-1-header">                                
-                              </h5>
-                              <div class="card-body">
-                                <div class="card-text">
-                                  <img class="img-thumbnail weather-image-1" src="">                                  
-                                  <p class="day-1-temp"></p>
-                                  <p class="day-1-wind"></p>
-                                  <p class="day-1-humidity"></p>
-                                </div>                                
-                              </div>
-                            </div>
-                          </div>
-
-                          <div class="col-12 col-lg-2">
-                            <div class="card">
-                              <h5 class="card-header bg-info day-2-header">
-                              </h5>
-                              <div class="card-body">
-                                <div class="card-text">
-                                  <img class="img-thumbnail weather-image-2" src="">
-                                  <p class="day-2-temp"></p>
-                                  <p class="day-2-wind"></p>
-                                  <p class="day-2-humidity"></p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-
-                          <div class="col-12 col-lg-2">
-                            <div class="card">
-                              <h5 class="card-header bg-info day-3-header">
-                              </h5>
-                              <div class="card-body">
-                                <div class="card-text">
-                                  <img class="img-thumbnail weather-image-3" src="">
-                                  <p class="day-3-temp"></p>
-                                  <p class="day-3-wind"></p>
-                                  <p class="day-3-humidity"></p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          
-                          <div class="col-12 col-lg-2">
-                            <div class="card">
-                              <h5 class="card-header bg-info day-4-header">
-                              </h5>
-                              <div class="card-body">
-                                <div class="card-text">
-                                  <img class="img-thumbnail weather-image-4" src="">
-                                  <p class="day-4-temp"></p>
-                                  <p class="day-4-wind"></p>
-                                  <p class="day-4-humidity"></p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-
-                          <div class="col-12 col-lg-2">
-                            <div class="card">
-                              <h5 class="card-header bg-info day-5-header">
-                              </h5>
-                              <div class="card-body">
-                                <div class="card-text">
-                                  <img class="img-thumbnail weather-image-5" src="">
-                                  <p class="day-5-temp"></p>
-                                  <p class="day-5-wind"></p>
-                                  <p class="day-5-humidity"></p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                    </div>
-                </div>
- 
-              </section>
+        <!-- Search Section -->
+        <div class="col-12 col-lg-3 align-self-start search-results">
         
+            <!-- Input For Searching -->
+            <h3>Search for a City</h3>
+            <input class="city-search form-control input-lg" type="text" placeholder="City">
+            <button class="city-button btn btn-primary btn-block">Search</button>
+            <hr>
 
-        </section>
+        </div>
+        
+        <div class="col-12 col-lg-9">
 
-    </main>
-  <!-- Option 1: jQuery and Bootstrap Bundle -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
-    <script src="./assets/js/scripts.js"></script>
+          <!-- Display Section For City Weather -->
+          <div class="row border border-dark m-1 p-2">
+
+              <div class="col-12 col-lg-9 city-current-weather">
+                <h3 class="city-name"></h3>
+                  <p class="temp"></p>
+                  <p class="wind"></p>
+                  <p class="humidity"></p>
+                  <p class="uvText rounded"></p>
+                  <p class="uvNumber rounded p-1"></p>
+              </div>
+
+          </div>
+
+          <div class="row">
+
+            <div class="col-12 col-lg-12 mb-1">
+              <h3>5-Day Forecast:</h3>
+            </div>
+
+          </div>
+
+          <!--Cards Section For Displaying 5-Day Forecast  -->
+          <div class="row justify-content-around no-gutters">
+
+            <!-- Day 1 Section -->
+            <div class="col-12 col-lg-2">
+              <div class="card">
+                <h5 class="card-header bg-info day-1-header"></h5>
+                <div class="card-body">
+                  <div class="card-text">
+                    <img class="img-thumbnail weather-image-1" src="">                                  
+                    <p class="day-1-temp"></p>
+                    <p class="day-1-wind"></p>
+                    <p class="day-1-humidity"></p>
+                  </div>                                
+                </div>
+              </div>
+            </div>
+
+            <!-- Day 2 Section -->
+            <div class="col-12 col-lg-2">
+              <div class="card">
+                <h5 class="card-header bg-info day-2-header">
+                </h5>
+                <div class="card-body">
+                  <div class="card-text">
+                    <img class="img-thumbnail weather-image-2" src="">
+                    <p class="day-2-temp"></p>
+                    <p class="day-2-wind"></p>
+                    <p class="day-2-humidity"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Day 3 Section -->
+            <div class="col-12 col-lg-2">
+              <div class="card">
+                <h5 class="card-header bg-info day-3-header">
+                </h5>
+                <div class="card-body">
+                  <div class="card-text">
+                    <img class="img-thumbnail weather-image-3" src="">
+                    <p class="day-3-temp"></p>
+                    <p class="day-3-wind"></p>
+                    <p class="day-3-humidity"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Day 4 Section -->
+            <div class="col-12 col-lg-2">
+              <div class="card">
+                <h5 class="card-header bg-info day-4-header">
+                </h5>
+                <div class="card-body">
+                  <div class="card-text">
+                    <img class="img-thumbnail weather-image-4" src="">
+                    <p class="day-4-temp"></p>
+                    <p class="day-4-wind"></p>
+                    <p class="day-4-humidity"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Day 5 Section -->
+            <div class="col-12 col-lg-2">
+              <div class="card">
+                <h5 class="card-header bg-info day-5-header">
+                </h5>
+                <div class="card-body">
+                  <div class="card-text">
+                    <img class="img-thumbnail weather-image-5" src="">
+                    <p class="day-5-temp"></p>
+                    <p class="day-5-wind"></p>
+                    <p class="day-5-humidity"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+
+        </div>
+
+      </section>
+      
+    </section>
+
+  </main>
+
+  <!-- jQuery and Bootstrap Bundle JS Files -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+  <!-- Main JS File -->
+  <script src="./assets/js/scripts.js"></script>
+
 </body>
+
 </html>
