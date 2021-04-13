@@ -8,6 +8,7 @@
 * The UV index is presented with a color that indicates whether the conditions are favorable, moderate, or severe.
 * It is presented the future weather conditions for that city with a 5-day forecast that displays the date, an icon representation of weather conditions, the temperature, the wind speed, and the humidity.
 * Clicking on a city in the search history it is presented with current and future conditions for that city.
+* It is also shown an alert message when the city is not found.
 
 # Project Image
 ![](./assets/images/weather-dashboard.png)
