@@ -20,7 +20,10 @@ function getForecast(city) {
         $('.temp').text('Temp: '+data.main.temp+String.fromCharCode(176)+' C')
         $('.wind').text('Wind: '+data.wind.speed+' MPH')
         $('.humidity').text('Humidity: '+data.main.humidity+' %')
-        let today = new Date().toISOString().slice(0, 10)
+
+        
+        // let today = new Date().toISOString().slice(0, 10)
+        let today=todayDate()
         $('.city-name').text(city+"("+today+")")
         
         var cityNameButton=document.createElement('button')
@@ -40,15 +43,16 @@ function getForecast(city) {
         return uvResponse.json();
         })
         .then(function (uvData) {
-
-        
         var uvText=$('.uvText')        
         var uvNumber=$('.uvNumber')
         uvIndexValue=Math.round(uvData.value)
 
         formatUvIndex(uvIndexValue,uvText,uvNumber)
 
-        });
+        localStorage.setItem(city, city);    
+
+
+        });                       
         });
     }
 
@@ -63,7 +67,10 @@ function getForecastButtons(event,city) {
         $('.temp').text('Temp: '+data.main.temp+String.fromCharCode(176)+' C')
         $('.wind').text('Wind: '+data.wind.speed+' MPH')
         $('.humidity').text('Humidity: '+data.main.humidity+' %')
-        $('.city-name').text(city)        
+        let today=todayDate()
+        // let today = new Date().toISOString().slice(0, 10)
+        $('.city-name').text(city+"("+today+")")
+            
         
         //Getting UV with coordinates
         fetch("https://api.openweathermap.org/data/2.5/uvi?lat="+data.coord.lat+"&lon="+data.coord.lon+"&appid="+api)
@@ -71,7 +78,13 @@ function getForecastButtons(event,city) {
         return uvResponse.json();
         })
         .then(function (uvData) {
-        $('.uv').text('UV Index: '+uvData.value) 
+            
+            var uvText=$('.uvText')        
+            var uvNumber=$('.uvNumber')
+            uvIndexValue=Math.round(uvData.value)
+    
+            formatUvIndex(uvIndexValue,uvText,uvNumber)
+             
         });
 
         });
@@ -89,7 +102,8 @@ function getForecastButtons(event,city) {
             return response.json();
             })
             .then(function (data) {
-                var days=[8,16,24,32,39]
+                // var days=[8,16,24,32,39]
+                var days=[0,8,16,24,32,39]
                 for(var i=0;i<5;i++){                          
                     $('.day-'+`${i + 1}`+'-header').text(data.list[days[i]].dt_txt.split(' ')[0])
                     var icon=data.list[days[i]].weather[0].icon;
@@ -110,7 +124,8 @@ function getForecastButtons(event,city) {
             return response.json();
             })
             .then(function (data) {
-                var days=[8,16,24,32,39]
+                //var days=[8,16,24,32,39]
+                var days=[0,8,16,24,32,39]
                 for(var i=0;i<5;i++){                          
                     $('.day-'+`${i + 1}`+'-header').text(data.list[days[i]].dt_txt.split(' ')[0])
                     var icon=data.list[days[i]].weather[0].icon;
@@ -145,3 +160,46 @@ function getForecastButtons(event,city) {
 
 
     }
+
+    function init(){
+        if (localStorage.length!=0){
+
+            //Getting Local Storage Key Values Pairs
+            let arrayOfKeys = Object.keys(localStorage);
+            let arrayOfValues = Object.values(localStorage);
+            let localstorage = {};
+    
+            //Building An Object From Local Storage Key Values Pairs
+            for (var i = 0; i < localStorage.length; i++){
+                localstorage[arrayOfKeys[i]] = arrayOfValues[i]
+            }
+    
+            let citiesNames = [];
+    
+            //Building A Multidimentional Array From Local Storage Object
+            for (var item in localstorage) {
+                citiesNames.push([item, localstorage[item]]);
+            }
+    
+
+            let numOfCities =citiesNames.length
+    
+            //Loop For Filling Text Areas Descriptions From Multidimentional Array
+            for (var i=0; i<numOfCities;i++){ 
+                getForecast(citiesNames[i][0])
+                getForecast5Days(citiesNames[i][0])
+                // $('[data-hour="'+ctiesNames[i][0]+'"]').text(ctiesNames[i][1])    
+            }    
+            
+        }
+    }
+
+function todayDate(){
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var yyyy = today.getFullYear();
+    today = yyyy + '-' + mm + '/' + dd;
+    return today
+}
+    init()
